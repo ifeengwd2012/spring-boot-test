@@ -1,0 +1,27 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>商品列表</title>
+    <link rel="stylesheet" href="../../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}"/>
+</head>
+<body>
+        <div class="container">
+            <h3>商品列表页面</h3>
+            <table class="table table-bordered">
+                <tr>
+                    <td>索引</td>
+                    <td>编号</td>
+                    <td>类型</td>
+                    <td>价格</td>
+                </tr>
+                <tr th:each="goods,goodsStat : ${goodsList}">
+                    <td th:text="${goodsStat.index + 1}">0</td>
+                    <td th:text="${goods.id}">0</td>
+                    <td th:text="${goods.type}">0</td>
+                    <td th:text="${goods.price}">0</td>
+                </tr>
+            </table>
+        </div>
+</body>
+</html>
